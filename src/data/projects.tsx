@@ -26,6 +26,10 @@ import {
   SiThreedotjs,
   SiTypescript,
   SiVuedotjs,
+  SiRedux,
+  SiWebrtc,
+  SiCss3,
+  SiHtml5,
 } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 const BASE_PATH = "/assets/projects-screenshots";
@@ -222,6 +226,48 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <SiSupabase />,
   },
+  webrtc: {
+    title: "WebRTC",
+    bg: "black",
+    fg: "white",
+    icon: <SiWebrtc />,
+  },
+  redux: {
+    title: "Redux",
+    bg: "black",
+    fg: "white",
+    icon: <SiRedux />,
+  },
+  monaco: {
+    title: "Monaco Editor",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Monaco</span>,
+  },
+  claude: {
+    title: "Claude API",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Claude</span>,
+  },
+  judge0: {
+    title: "Judge0",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">Judge0</span>,
+  },
+  css: {
+    title: "CSS",
+    bg: "black",
+    fg: "white",
+    icon: <SiCss3 />,
+  },
+  html: {
+    title: "HTML",
+    bg: "black",
+    fg: "white",
+    icon: <SiHtml5 />,
+  },
 };
 export type Project = {
   id: string;
@@ -235,6 +281,52 @@ export type Project = {
   live: string;
 };
 const projects: Project[] = [
+  {
+    id: "collabcode",
+    category: "Pair programming & Interview platform",
+    title: "CollabCode",
+    src: "/assets/projects-screenshots/collabcode/landing.png",
+    screenshots: ["landing.png"],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.next,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.webrtc,
+        PROJECT_SKILLS.yjs,
+        PROJECT_SKILLS.monaco,
+        PROJECT_SKILLS.claude,
+        PROJECT_SKILLS.tailwind,
+      ],
+      backend: [
+        PROJECT_SKILLS.judge0,
+      ],
+    },
+    live: "https://github.com/sachin23rana/code-collab-playground",
+    github: "https://github.com/sachin23rana/code-collab-playground",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Real-Time Pair Programming & Structured Interview Platform
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            CollabCode is a dual-mode real-time collaboration single-page application built for casual pair programming and structured technical interviews. By leveraging WebRTC DataChannels and Yjs CRDT for conflict resolution, it establishes zero-login P2P synchronization sustaining sub-100ms synchronization latency without requiring any centralized backend.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+          <TypographyH3 className="my-4 mt-8">Structured Interview Workflow</TypographyH3>
+          <p className="font-mono mb-2">
+            The platform supports WebRTC video and audio streams, a curated library of Data Structures and Algorithms (DSA) problems, live interviewer scorecards, a countdown timer, anti-cheat tab-switch detection, and auto-generated post-interview PDF reports.
+          </p>
+          <SlideShow images={[`${BASE_PATH}/collabcode/landing.png`]} />
+          <TypographyH3 className="my-4 mt-8">AI Integration & Execution</TypographyH3>
+          <p className="font-mono mb-2">
+            CollabCode integrates a shared Claude AI coding assistant with Server-Sent Events (SSE) streaming, which injects active editor code as live context. It also features Judge0 sandboxed execution across 6 programming languages, and a full session replay timeline for post-session review.
+          </p>
+        </div>
+      );
+    },
+  },
   {
     id: "codingducks",
     category: "Coding platform",
@@ -592,107 +684,6 @@ const projects: Project[] = [
               `${BASE_PATH}/ghostchat/4.png`,
             ]}
           />
-        </div>
-      );
-    },
-  },
-  {
-    id: "jra",
-    category: "Result analyzer",
-    title: "JNTUA Results Analyzer",
-    src: "/assets/projects-screenshots/jra/1.png",
-    screenshots: ["1.png"],
-    live: "https://naresh-khatri.github.io/JNTUA-result-analyser-spa/#/",
-    skills: {
-      frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.vue],
-      backend: [
-        PROJECT_SKILLS.node,
-        PROJECT_SKILLS.mongo,
-        PROJECT_SKILLS.express,
-        PROJECT_SKILLS.docker,
-      ],
-    },
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono ">
-            JNTUA Results Analyzer was a revolutionary tool designed to simplify
-            and enhance the experience of accessing academic results. It served
-            as a powerful proxy between the JNTUA university results website and
-            its users, offering a range of features that made result analysis
-            faster and more efficient. Here&apos;s what made it stand out:
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-          <SlideShow images={[`${BASE_PATH}/jra/1.png`]} />
-          <TypographyH3 className="my-4 mt-8">
-            Effortless Results Retrieval
-          </TypographyH3>
-          {/* Effortless Results Retrieval: */}
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Search all your results using a single roll number, eliminating
-              the tedious task of sifting through thousands of rows on the
-              official site.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Class-Wise Results:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              class-wise results effortlessly by entering a roll number range.
-              No more manual searches or filtering.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Faculty Features:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Faculty members could download batch results in Excel format,
-              making administrative tasks a breeze.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">
-            Enhanced Data Insights:
-          </TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Each result came with additional features including:
-              <ul className="list-disc font-mono ml-6">
-                <li>
-                  <strong>CGPA Calculations: </strong>Easily track your
-                  cumulative grade point average.
-                </li>
-                <li>
-                  <strong>Charts:</strong> Visualize your academic performance
-                  with comprehensive charts.
-                </li>
-                <li>
-                  <strong>Future Projections:</strong> Get insights into
-                  potential future outcomes based on current performance.
-                </li>
-                <li>
-                  <strong> Backlog Counts: </strong>Keep track of your backlog
-                  subjects at a glance.
-                </li>
-              </ul>
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Performance:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              The application was significantly faster and more efficient than
-              the official site, providing a smoother user experience.
-            </li>
-          </ul>
-          <TypographyH3 className="my-4 mt-8">Downfall:</TypographyH3>
-          <ul className="list-disc ml-6">
-            <li className="font-mono">
-              Unfortunately, as of May 2022, the tool stopped working due to the
-              introduction of CAPTCHA on the official JNTUA results site, which
-              disrupted the seamless functionality of the app. JNTUA Results
-              Analyzer transformed the way students and faculty interacted with
-              academic results, making it a must-have tool until its unexpected
-              shutdown.
-            </li>
-          </ul>
         </div>
       );
     },

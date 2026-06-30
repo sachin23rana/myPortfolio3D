@@ -10,6 +10,13 @@ import "@splidejs/react-splide/css";
 
 const PROJECTS = [
   {
+    id: 5,
+    name: "CollabCode",
+    description: `A real-time collaborative coding and structured technical interview platform featuring P2P sync via WebRTC DataChannels and Yjs CRDT, a shared Claude AI coding assistant, and sandboxed code execution.`,
+    link: "https://github.com/sachin23rana/code-collab-playground",
+    images: ["/assets/projects-screenshots/collabcode/landing.png"],
+  },
+  {
     id: 1,
     name: "Coding Ducks",
     description: `Dive into CodingDucks, a fusion of CodePen's creative playground with LeetCode's problem-solving realm.
@@ -50,14 +57,6 @@ best deals on luxury brands and products. Join our savvy community of shoppers a
       "/assets/projects-screenshots/couponluxury/4.png",
       "/assets/projects-screenshots/couponluxury/5.png",
     ],
-  },
-  {
-    id: 4,
-    name: "JNTUA Results Analyser",
-    description: `the go-to app for JNTUA students, empowering them to analyze, compare, and view classwise results effortlessly.
-     Dive into your academic journey with ease, track your progress, and gain valuable insights.`,
-    link: "/projects/4",
-    images: ["/assets/projects-screenshots/jra/1.png"],
   },
 ];
 function Page() {
