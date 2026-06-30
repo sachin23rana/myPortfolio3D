@@ -259,7 +259,7 @@ const projects: Project[] = [
       ],
     },
     live: "https://www.codingducks.xyz/",
-    github: "https://github.com/Naresh-Khatri/Coding-Ducks",
+    github: "https://github.com/sachin23rana/coding_duck",
     get content() {
       return (
         <div>
@@ -500,8 +500,8 @@ const projects: Project[] = [
     title: "My Portfolio",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["1.png"],
-    live: "http://nareshkhatri.vercel.app",
-    github:"https://github.com/Naresh-Khatri/Portfolio",
+    live: "https://portfoliosachinrana.netlify.app",
+    github: "https://github.com/sachin23rana/myPortfolio3D",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
@@ -567,7 +567,7 @@ const projects: Project[] = [
     src: "/assets/projects-screenshots/ghostchat/1.png",
     screenshots: ["1.png", "2.png", "3.png", "4.png"],
     live: "https://ghostchat.vercel.app",
-    github:"https://github.com/Naresh-Khatri/GhostChat",
+    github: "https://github.com/sachin23rana/Ghost-Chat",
     skills: {
       frontend: [PROJECT_SKILLS.js, PROJECT_SKILLS.next, PROJECT_SKILLS.chakra],
       backend: [PROJECT_SKILLS.supabase],
